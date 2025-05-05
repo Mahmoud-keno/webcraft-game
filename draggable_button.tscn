@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://bdundrlig7hrm"]
+
+[ext_resource type="Texture2D" uid="uid://ir7oci8isrfl" path="res://assets/number-2.png" id="1_cmjtl"]
+[ext_resource type="Script" path="res://draggable_button.gd" id="1_ssfif"]
+[ext_resource type="Texture2D" uid="uid://rbr38waq7hoe" path="res://assets/cancel-removebg-preview.png" id="3_dvyuu"]
+[ext_resource type="Script" path="res://del_button.gd" id="4_hicpg"]
+
+[node name="DraggableButton" type="TextureButton"]
+modulate = Color(0.775063, 0.775063, 0.775063, 1)
+z_index = 10
+custom_minimum_size = Vector2(10, 10)
+offset_left = 102.0
+offset_top = 97.0
+offset_right = 614.0
+offset_bottom = 609.0
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("1_cmjtl")
+script = ExtResource("1_ssfif")
+
+[node name="DeleteButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 340.0
+offset_top = 365.0
+offset_right = 840.0
+offset_bottom = 865.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("3_dvyuu")
+script = ExtResource("4_hicpg")
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]
+[connection signal="button_up" from="." to="." method="_on_button_up"]
